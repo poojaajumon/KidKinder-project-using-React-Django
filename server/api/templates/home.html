@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>KidKinder</h1>
+    <p>Welcome </p>
+    <img src="{% static 'images/kidkinder.png' %}" alt="My image" style="height: 600px; width: 600px;margin-left: 180px;"> <br>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

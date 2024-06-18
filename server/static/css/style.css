@@ -1,0 +1,152 @@
+/* General styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+.content{
+    margin-bottom: 400px;
+}
+
+/* Login form styles */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-container p {
+    margin-top: 10px;
+    color: red;
+    text-align: center;
+}
+
+    /* Custom sidebar styles */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        display: block;
+        padding: 48px 0 0;
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    }
+
+    .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable */
+    }
+
+    .sidebar .nav-link {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .sidebar .nav-link.active {
+        color: #007bff;
+    }
+
+    /* Custom main content styles */
+    .main-content {
+        margin-left: 240px; /* Adjust this margin to match sidebar width */
+        padding: 20px;
+      
+       
+    }
+   
+    
+    
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .sidebar {
+            position: static;
+            margin-top: .5rem;
+            padding: 0;
+        }
+
+        .sidebar-sticky {
+            overflow-y: hidden;
+        }
+
+        .main-content {
+            margin-left: 0;
+        }
+    }
+
+/* Custom styles for tables */
+.table {
+    font-size: 16px;
+}
+
+.table th, .table td {
+    padding: 10px;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}

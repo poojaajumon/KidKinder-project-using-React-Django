@@ -1,0 +1,49 @@
+<!-- classes.html -->
+{% extends 'base.html' %}
+
+{% block title %}Classes{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h1>Class List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Class Image</th>
+                <th>Topic</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cls in classes_data %}
+            <tr>
+                <td>{{ cls.id }}</td>
+                <td style="width: 280px;">
+                    {% if cls.classes_image %}
+                        <img src="{{ cls.classes_image.url }}" alt="{{ cls.classes_topic }}" style="width: 250px; height: 150px;;">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+                <td style="width: 200px;">{{ cls.classes_topic }}</td>
+                <td style="width: 350px;">{{ cls.classes_details }}</td>
+                <td><a href="{% url 'edit_class' pk=cls.pk %}"  class="btn btn-primary">Edit</a></td>
+               
+                <td><form action="{% url 'delete_class' pk=cls.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit"   class="btn btn-danger">Delete</button>
+                </form></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+  
+{% endblock %}
+
+

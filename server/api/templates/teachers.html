@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Teachers List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Teachers List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.id }}</td>
+                <td>
+                    {% if teacher.teacher_image %}
+                        <img src="{{ teacher.teacher_image.url }}" alt="{{ teacher.teacher_name }}" style="max-width: 100px;">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+                <td>{{ teacher.teacher_name }}</td>
+                <td>{{ teacher.subject }}</td>
+                <td><a href="{% url 'edit_teacher' pk=teacher.pk %}"  class="btn btn-primary">Edit</a></td>
+               
+                <td><form action="{% url 'delete_teacher' pk=teacher.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit"   class="btn btn-danger">Delete</button>
+                </form></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
